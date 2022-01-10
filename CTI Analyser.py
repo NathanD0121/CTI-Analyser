@@ -47,7 +47,7 @@ class Analyser():
             ctiCheck = Model.analyser.wv.similarity(w1=i, w2=j)
             if ctiCheck >= 0.9:
                 searchWords.append(i)
-                #searchWords.append(j) #Using j gives lots of false results
+                searchWords.append(j)
     
     #Remove duplicates
     searchWords = list(dict.fromkeys(searchWords))
@@ -66,6 +66,9 @@ class Analyser():
             
     #Remove duplicates
     ctiList = ctiList.drop_duplicates(subset='Post', keep="last")
+    
+    #Create CSV
+    ctiList.to_csv("CTI.csv", mode="w")
             
 class Report_Generator():
     for i, r in Analyser.ctiList.iterrows():
