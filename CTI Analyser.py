@@ -1,6 +1,5 @@
 #CTI Analyser
 #Nathan Andrew Deguara
-#S16109197
 #Masters Project
 
 #Import required librarys
@@ -47,7 +46,7 @@ class Analyser():
             ctiCheck = Model.analyser.wv.similarity(w1=i, w2=j)
             if ctiCheck >= 0.9:
                 searchWords.append(i)
-                searchWords.append(j)
+                #searchWords.append(j)
     
     #Remove duplicates
     searchWords = list(dict.fromkeys(searchWords))
